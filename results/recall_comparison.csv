@@ -1,0 +1,17 @@
+lang,method,task,precision,recall,f1,n_pos
+tamil,majority_class,vulgar,0.0,0.0,0.0,1
+tamil,majority_class,abuse,0.0,0.0,0.0,2
+tamil,ocr_tfidf_logreg,vulgar,0.0,0.0,0.0,1
+tamil,ocr_tfidf_logreg,abuse,0.0,0.0,0.0,2
+tamil,clip_image_linear_probe,vulgar,0.0,0.0,0.0,1
+tamil,clip_image_linear_probe,abuse,0.0,0.0,0.0,2
+tamil,dinov2_image_linear_probe,vulgar,0.0,0.0,0.0,1
+tamil,dinov2_image_linear_probe,abuse,0.0,0.0,0.0,2
+telugu,majority_class,vulgar,0.0,0.0,0.0,20
+telugu,majority_class,abuse,0.0,0.0,0.0,9
+telugu,ocr_tfidf_logreg,vulgar,0.2727,0.45,0.3396,20
+telugu,ocr_tfidf_logreg,abuse,0.0,0.0,0.0,9
+telugu,clip_image_linear_probe,vulgar,0.3333,0.4,0.3636,20
+telugu,clip_image_linear_probe,abuse,0.1765,0.3333,0.2308,9
+telugu,dinov2_image_linear_probe,vulgar,0.2,0.2,0.2,20
+telugu,dinov2_image_linear_probe,abuse,0.0769,0.1111,0.0909,9

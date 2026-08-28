@@ -1,0 +1,18 @@
+{
+  "id": "dpaul93/hasoc-tamil-indic-bert-finetune",
+  "title": "HASOC Tamil indic-bert finetune",
+  "code_file": "kernel_tamil_v2.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": [
+    "dpaul93/hasoc-fire2026-lean"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

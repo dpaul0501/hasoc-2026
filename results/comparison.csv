@@ -1,0 +1,58 @@
+lang,baseline,supervision,sentiment_f1,sarcasm_f1,vulgar_f1,abuse_f1,target_f1,overall_macro_f1,notes
+tamil,majority_class,none,0.2147,0.3893,0.4984,0.4969,0.1274,0.3453,floor baseline
+telugu,majority_class,none,0.2548,0.4558,0.4667,0.4855,0.0768,0.3479,floor baseline
+tamil,clip_image_linear_probe,linear_probe_supervised,0.2931,0.7175,0.4904,0.4872,0.1914,0.4359,"openai/clip-vit-base-patch32, device=mps"
+telugu,clip_image_linear_probe,linear_probe_supervised,0.3935,0.7186,0.6311,0.5814,0.3728,0.5395,"openai/clip-vit-base-patch32, device=mps"
+tamil,zeroshot_vlm_llava7b_ollama,zero_shot,0.1903,0.4713,0.4984,0.4969,0.1712,0.3656,"llava:7b-v1.6-mistral-q4_K_M, parse_failures=0/160"
+tamil,ocr_tfidf_logreg,linear_probe_supervised,0.4076,0.7393,0.4984,0.4969,0.2566,0.4798,empty_ocr_frac=0.00
+telugu,ocr_tfidf_logreg,linear_probe_supervised,0.5021,0.6286,0.6043,0.4822,0.2087,0.4852,empty_ocr_frac=0.00
+telugu,zeroshot_vlm_llava7b_ollama,zero_shot,0.2753,0.3978,0.4667,0.4855,0.0728,0.3396,"llava:7b-v1.6-mistral-q4_K_M, parse_failures=0/160"
+tamil,dinov2_image_linear_probe,linear_probe_supervised,0.3822,0.6104,0.4953,0.4921,0.2231,0.4406,"facebook/dinov2-base, device=mps"
+telugu,dinov2_image_linear_probe,linear_probe_supervised,0.436,0.5733,0.5429,0.5119,0.2418,0.4612,"facebook/dinov2-base, device=mps"
+tamil,zeroshot_vlm_llava_7b-v1_6-mistral-q2_K,zero_shot,0.2199,0.5799,0.4984,0.4969,0.2229,0.4036,"llava:7b-v1.6-mistral-q2_K, parse_failures=0/160"
+tamil,zeroshot_vlm_moondream_latest,zero_shot,0.2147,0.4004,0.4754,0.3155,0.0654,0.2943,"moondream:latest, parse_failures=0/160"
+telugu,zeroshot_vlm_llava_7b-v1_6-mistral-q2_K,zero_shot,0.27,0.5345,0.4667,0.4855,0.163,0.3839,"llava:7b-v1.6-mistral-q2_K, parse_failures=0/160"
+tamil,zeroshot_vlm_llava_7b-v1_6-mistral-q3_K_M,zero_shot,0.2622,0.4792,0.4984,0.4969,0.1081,0.369,"llava:7b-v1.6-mistral-q3_K_M, parse_failures=0/160"
+telugu,zeroshot_vlm_llava_7b-v1_6-mistral-q3_K_M,zero_shot,0.3664,0.33,0.4667,0.4855,0.0585,0.3414,"llava:7b-v1.6-mistral-q3_K_M, parse_failures=0/160"
+tamil,zeroshot_vlm_llava_7b-v1_6-mistral-q4_0,zero_shot,0.3183,0.5316,0.4984,0.4969,0.3171,0.4325,"llava:7b-v1.6-mistral-q4_0, parse_failures=0/160"
+telugu,zeroshot_vlm_moondream_latest,zero_shot,0.0993,0.5473,0.3764,0.2376,0.0768,0.2675,"moondream:latest, parse_failures=15/160"
+telugu,zeroshot_vlm_llava_7b-v1_6-mistral-q4_0,zero_shot,0.3557,0.3995,0.4667,0.4855,0.1165,0.3648,"llava:7b-v1.6-mistral-q4_0, parse_failures=0/160"
+tamil,zeroshot_vlm_minicpm-v_latest,zero_shot,0.2231,0.4531,0.4953,0.3877,0.1279,0.3374,"minicpm-v:latest, parse_failures=0/160"
+tamil,zeroshot_vlm_llava_7b-v1_6-mistral-q4_K_M,zero_shot,0.2118,0.5739,0.4969,0.4969,0.1045,0.3768,"llava:7b-v1.6-mistral-q4_K_M, parse_failures=0/160"
+telugu,zeroshot_vlm_minicpm-v_latest,zero_shot,0.2931,0.5143,0.4944,0.4884,0.1748,0.393,"minicpm-v:latest, parse_failures=0/160"
+telugu,zeroshot_vlm_llava_7b-v1_6-mistral-q4_K_M,zero_shot,0.2683,0.4898,0.4667,0.4855,0.0629,0.3546,"llava:7b-v1.6-mistral-q4_K_M, parse_failures=0/160"
+tamil,zeroshot_vlm_qwen2_5vl_latest,zero_shot,0.3013,0.6033,0.4984,0.4969,0.2768,0.4353,"qwen2.5vl:latest, parse_failures=0/160"
+telugu,zeroshot_vlm_qwen2_5vl_latest,zero_shot,0.5208,0.6163,0.4649,0.4839,0.2128,0.4597,"qwen2.5vl:latest, parse_failures=1/160"
+tamil,zeroshot_vlm_qwen3-vl_latest,zero_shot,0.3148,0.5636,0.4855,0.4805,0.2685,0.4226,"qwen3-vl:latest, request_failures=7/160, field_misses=0/800"
+telugu,zeroshot_vlm_qwen3-vl_latest,zero_shot,0.3285,0.6103,0.4571,0.4912,0.2357,0.4246,"qwen3-vl:latest, request_failures=14/160, field_misses=0/800"
+tamil,clip_image_linear_probe__text_obfuscated,linear_probe_supervised,0.3013,0.6149,0.4969,0.4937,0.1642,0.4142,dev images text_obfuscated
+tamil,dinov2_image_linear_probe__text_obfuscated,linear_probe_supervised,0.402,0.6204,0.4953,0.4872,0.1828,0.4375,dev images text_obfuscated
+tamil,zeroshot_vlm_qwen2_5vl__text_obfuscated,zero_shot,0.331,0.5465,0.4984,0.4969,0.253,0.4252,"dev images text_obfuscated, request_failures=0/160, field_misses=0/800"
+tamil,clip_image_linear_probe__visual_obfuscated,linear_probe_supervised,0.2651,0.6316,0.4984,0.4969,0.2279,0.424,dev images visual_obfuscated
+tamil,dinov2_image_linear_probe__visual_obfuscated,linear_probe_supervised,0.3288,0.584,0.4984,0.4937,0.1351,0.408,dev images visual_obfuscated
+tamil,zeroshot_vlm_qwen2_5vl__visual_obfuscated,zero_shot,0.2313,0.4753,0.4984,0.4969,0.306,0.4016,"dev images visual_obfuscated, request_failures=0/160, field_misses=0/800"
+telugu,clip_image_linear_probe__text_obfuscated,linear_probe_supervised,0.3558,0.6212,0.5946,0.4719,0.1462,0.4379,dev images text_obfuscated
+tamil,translated_en_tfidf_logreg,linear_probe_supervised,0.4221,0.7421,0.4921,0.4805,0.2638,0.4801,empty_frac=0.00
+telugu,translated_en_tfidf_logreg,linear_probe_supervised,0.3579,0.5588,0.6223,0.5518,0.1479,0.4477,empty_frac=0.00
+telugu,dinov2_image_linear_probe__text_obfuscated,linear_probe_supervised,0.4069,0.6151,0.5022,0.4631,0.2719,0.4518,dev images text_obfuscated
+telugu,zeroshot_vlm_qwen2_5vl__text_obfuscated,zero_shot,0.4201,0.5393,0.4649,0.4839,0.302,0.442,"dev images text_obfuscated, request_failures=1/160, field_misses=0/800"
+telugu,clip_image_linear_probe__visual_obfuscated,linear_probe_supervised,0.3134,0.5535,0.5671,0.4788,0.1064,0.4038,dev images visual_obfuscated
+telugu,dinov2_image_linear_probe__visual_obfuscated,linear_probe_supervised,0.3778,0.5475,0.5038,0.4805,0.1217,0.4063,dev images visual_obfuscated
+telugu,zeroshot_vlm_qwen2_5vl__visual_obfuscated,zero_shot,0.4428,0.4846,0.4649,0.4839,0.1981,0.4149,"dev images visual_obfuscated, request_failures=1/160, field_misses=0/800"
+tamil,ocr_indicbert_multitask,fine_tuned,0.4547,0.7452,0.4872,0.4754,0.1638,0.4653,"xlm-roberta-base, 8 epochs, class-weighted CE, kaggle"
+telugu,ocr_indicbert_multitask,fine_tuned,0.3698,0.6244,0.5167,0.4719,0.1447,0.4255,"xlm-roberta-base, 8 epochs, class-weighted CE, kaggle"
+tamil,zeroshot_textllm_qwen2_5_7b,zero_shot,0.2608,0.4912,0.5518,0.4872,0.2574,0.4097,"qwen2.5:7b, text-only (OCR), request_failures=0/160, field_misses=0/800"
+telugu,zeroshot_textllm_qwen2_5_7b,zero_shot,0.3561,0.6384,0.4985,0.4944,0.2438,0.4462,"qwen2.5:7b, text-only (OCR), request_failures=0/160, field_misses=0/800"
+tamil,fewshot_cot_vlm_qwen2_5vl_latest,zero_shot,0.3177,0.597,0.4928,0.5749,0.1707,0.4306,"PILOT n=35 (not full 160-dev, not directly comparable), qwen2.5vl:latest, 3-shot incl. vulgar+abusive positive, CoT, request_failures=0/35, field_misses=0/175"
+telugu,fewshot_cot_vlm_qwen2_5vl_latest,zero_shot,0.5424,0.6225,0.65,0.536,0.1649,0.5032,"PILOT n=35 (not full 160-dev, not directly comparable), qwen2.5vl:latest, 3-shot incl. vulgar+abusive positive, CoT, request_failures=1/35, field_misses=0/175"
+tamil,retrieval_cot_vlm_qwen2_5vl_latest,zero_shot,0.3849,0.6274,0.4853,0.6225,0.1791,0.4598,"PILOT n=35, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 2 fixed vulgar/abusive exemplars, CoT, request_failures=1/35, field_misses=0/175"
+telugu,retrieval_cot_vlm_qwen2_5vl_latest,zero_shot,0.5599,0.7177,0.4407,0.4928,0.1557,0.4734,"PILOT n=35, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 2 fixed vulgar/abusive exemplars, CoT, request_failures=4/35, field_misses=0/175"
+tamil,retrieval_cot_vlm_qwen2_5vl_latest__val,zero_shot,0.2667,0.7333,0.4286,0.0,0.4286,0.3714,"PILOT n=4, VAL split, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 4 fixed target-diverse exemplars, CoT, request_failures=0/4, field_misses=0/20"
+tamil,retrieval_cot_vlm_qwen2_5vl_latest__val,zero_shot,0.2667,0.7333,0.4286,0.0,0.4286,0.3714,"PILOT n=4, VAL split, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 4 fixed target-diverse exemplars, CoT, request_failures=0/4, field_misses=0/20"
+tamil,retrieval_cot_vlm_qwen2_5vl_latest__val,zero_shot,0.2508,0.4408,0.4982,0.4891,0.1497,0.3657,"PILOT n=140, VAL split, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 4 fixed target-diverse exemplars, CoT, request_failures=0/140, field_misses=0/700"
+tamil,retrieval_cot_vlm_qwen2_5vl_latest__val,zero_shot,0.2508,0.4408,0.4982,0.4891,0.1497,0.3657,"PILOT n=140, VAL split, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 4 fixed target-diverse exemplars, CoT, request_failures=0/140, field_misses=0/700"
+telugu,retrieval_cot_vlm_qwen2_5vl_latest__val,zero_shot,0.4391,0.6245,0.4656,0.4834,0.1928,0.4411,"PILOT n=140, VAL split, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 4 fixed target-diverse exemplars, CoT, request_failures=0/140, field_misses=0/700"
+tamil,retrieval_cot_vlm_qwen2_5vl_latest__val_control_oldexemplars,zero_shot,0.344,0.4245,0.4982,0.4872,0.1576,0.3823,"PILOT n=140, VAL data, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 3 fixed exemplars (['image_tamil_0590.jpg', 'image_tamil_0907.jpg', 'image_tamil_0356.jpg']), CoT, request_failures=0/140, field_misses=0/700"
+telugu,retrieval_cot_vlm_qwen2_5vl_latest__val_control_oldexemplars,zero_shot,0.4096,0.6175,0.4949,0.5058,0.2128,0.4481,"PILOT n=140, VAL data, qwen2.5vl:latest, 1 dynamic CLIP-retrieved neighbor + 3 fixed exemplars (['image_telugu_0172.png', 'image_telugu_0650.png', 'image_telugu_0476.png']), CoT, request_failures=6/140, field_misses=0/700"
+tamil,ocr_indicbert_multitask_v2,fine_tuned,0.3277,0.7442,0.4984,0.4969,0.247,0.4628,"xlm-roberta-base, 12 epochs, differential LR + grad clip + early stop, kaggle"
+telugu,ocr_indicbert_multitask_v2,fine_tuned,0.5065,0.7101,0.5222,0.4702,0.2892,0.4996,"xlm-roberta-base, 12 epochs, differential LR + grad clip + early stop, kaggle"

@@ -1,0 +1,23 @@
+# Raw shared-task / dataset content -- not redistributed
+Tamil_HASOC/
+Tamil_HASOC.zip
+Telugu_HASOC/
+Telugu_HASOC.zip
+obfuscated/
+splits/
+bhm_bengali/train.json
+bhm_bengali/test.json
+bhm_bengali/valid.json
+bhm_kaggle/train.csv
+bhm_kaggle/valid.csv
+bhm_kaggle/test.csv
+kaggle_dataset/
+kaggle_dataset_update/
+
+# Python / env
+.venv/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

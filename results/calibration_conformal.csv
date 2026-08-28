@@ -1,0 +1,11 @@
+lang,task,n_classes,ece,target_coverage,empirical_coverage,avg_conformal_set_size
+tamil,sentiment,3,0.1183,0.9,0.925,2.48
+tamil,sarcasm,2,0.0869,0.9,0.925,1.49
+tamil,vulgar,2,0.1625,0.9,0.875,0.88
+tamil,abuse,2,0.1847,0.9,0.875,0.89
+tamil,target,6,0.2438,0.9,0.9125,3.21
+telugu,sentiment,3,0.179,0.9,0.925,2.26
+telugu,sarcasm,2,0.1829,0.9,0.8875,1.23
+telugu,vulgar,2,0.0931,0.9,0.9125,1.31
+telugu,abuse,2,0.242,0.9,0.975,1.05
+telugu,target,8,0.1147,0.9,0.9375,4.12

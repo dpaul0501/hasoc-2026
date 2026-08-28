@@ -1,0 +1,18 @@
+{
+  "id": "dpaul93/bhm-bengali-finetune",
+  "title": "BHM Bengali finetune",
+  "code_file": "kernel_bhm.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": [
+    "dpaul93/bhm-bengali-lean"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
