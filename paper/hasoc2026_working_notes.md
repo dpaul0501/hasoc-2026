@@ -125,11 +125,27 @@ The consistent gap between general-purpose foundation models (zero-shot and few-
 - The reasoning-mode model (qwen3-VL) had the highest request-failure rate of any VLM tested without an accuracy improvement over its non-reasoning sibling, suggesting the extra reasoning capacity was not being spent on task-relevant distinctions for this content.
 - `IMSyPP/hate_speech_multilingual`, with zero Bengali training exposure, still scores hate-F1 0.320 on BHM — well above zero, indicating some hate-relevant signal (formatting, punctuation, code-mixed English tokens, emoji) transfers even across a genuine language boundary. This is a caution against reading any non-zero LLM/VLM score as evidence of language understanding; some of it may be surface pattern-matching that happens to correlate with the label.
 
-## 6. Limitations
+## 6. Risks and Broader Impact
+
+Beyond raw accuracy, several findings above point to failure modes with direct deployment consequences, distinct from "the model got the label wrong":
+
+**Silent moderation failure.** Every baseline tested has 0% recall on Tamil vulgar and abuse content (§4.4), while overall macro-F1 stays around 0.48 — a range that reads as reasonably competent in a results table. A content filter built on any of these baselines would pass through all vulgar/abusive Tamil content in our test set while reporting metrics that look adequate. This was the modal outcome, not an edge case, across every model we evaluated for this language.
+
+**Calibration can mask this failure rather than reveal it.** Conformal coverage tracks its 0.9 nominal target even on the classes with 0% recall (§4.6). A deployer relying on calibration/confidence scores to decide when to trust a model — a common practice — would see well-calibrated confidence from a model that never flags the content it exists to catch.
+
+**Language-access asymmetry in safety tooling.** The consistent gap between general-purpose foundation models and simple in-language baselines (§4.2–4.3) means Tamil-, Telugu-, and Bengali-speaking users are, on this evidence, served by weaker content-safety tooling than English-speaking users of the same model families — an equity concern that compounds existing under-resourcing of these languages online.
+
+**"Use a regional model instead" is not automatically safe.** A purpose-built, regionally-pretrained Indic abusive-speech classifier (CNERG/MuRIL) underperforms even an uncalibrated general-purpose LLM prompt on Bengali (§5). Reading our results as "swap in a regional model and the problem is solved" is an overclaim our own data contradicts — regional pretraining without in-distribution fine-tuning on the exact label definitions in use was not sufficient in any experiment we ran.
+
+**Safety-tuning may trade off against harm detection.** Foundation models qualitatively default to the non-harmful label under uncertainty (§5), consistent with instruction-tuning that makes a model reluctant to produce harmful content also making it reluctant to flag harmful content shown to it — particularly where its uncertainty is already higher, as in these languages. Alignment behavior validated mainly on English is not guaranteed to transfer its intended effect to low-resource-language moderation, and could plausibly work against it.
+
+**Overclaiming from three languages.** Any claim of the form "LLMs fail on low-resource languages, local models win" built on this data should be scoped to what three languages, single-digit minority-class counts in some dev splits, and largely single-seed runs can support. We report the pattern as consistent and worth further study, not as a proven general law; a benchmark-scale claim would need more languages, multiple seeds, and matched-pair ablations isolating pretraining-data coverage from architecture and scale.
+
+## 7. Limitations
 
 Zero-shot results depend on prompt wording, which we did not exhaustively search. Bengali LLM-prompting numbers use a fixed 150-example sample rather than the full test set. Tamil fine-tuning was not further tuned beyond the stabilized configuration in §4.7, to avoid overfitting a 160-example dev set. The mechanisms proposed in §5 are consistent with our results but were not tested by controlled ablation (e.g., we did not measure tokenizer fragmentation directly, nor run a matched pair of models differing only in code-mixed pretraining exposure). Diffusion-based visual features and a retrieval+reasoning agent pipeline were not evaluated.
 
-## 7. Conclusion
+## 8. Conclusion
 
 A stabilized multi-task fine-tuned transformer is competitive with the best frozen-encoder linear probe on Telugu and Bengali, and a simple OCR/caption+TF-IDF baseline outperforms zero-shot, few-shot, chain-of-thought, and retrieval-augmented VLM/LLM prompting — including against a purpose-built Indic classifier — across all three languages studied. The gap is not resolved by translation, is only closed by pretrained regional encoders when combined with in-distribution fine-tuning, and coexists with qualitative signs (majority-label bias, non-monotonic quantization behavior, non-zero scores from a model with no exposure to the target language) that point toward pretraining-data coverage and safety-tuning artifacts rather than raw model capacity as the operative bottleneck. Per-class recall on harm-relevant labels, not aggregate macro-F1, is the metric that distinguishes a genuinely useful system from one that merely predicts well on the majority class; we recommend it as a required reporting metric for this task, and recommend differential learning rates, gradient clipping, and validation-based early stopping as standard practice for small-sample multi-task fine-tuning submissions.
 
