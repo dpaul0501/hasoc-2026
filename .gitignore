@@ -18,6 +18,9 @@ kaggle_dataset_update/
 .venv/
 __pycache__/
 *.pyc
+.env
+*.env
+paper/neurips_submission/
 
 # OS
 .DS_Store
